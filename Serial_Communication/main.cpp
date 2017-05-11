@@ -13,8 +13,12 @@ int main()
 	HANDLE handleSerialCommPort;
 	BOOL Status = 0;	// Used for error checking different parts of the program
 	std::wstring comID;						// CommPort, check device manager
-	char dataToSerialPortBuffer[32] = "A";	// Data to write to the serial port
+	char * dataToSerialPortBuffer = "0";	// Data to send to the serial port
 	std::string recievedString;				// Data from the serial port
+
+	
+	toTransmit(dataToSerialPortBuffer);
+	std::cout << std::endl;
 
 	InitSerialComm(Status, comID, handleSerialCommPort);
 	std::cout << std::endl;
