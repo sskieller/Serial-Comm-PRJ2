@@ -36,9 +36,14 @@ void Transmitting(BOOL Status, HANDLE handleSerialCommPort, char dataToSerialPor
 	std::cout << "+=============================================+" << std::endl;
 }
 
-char toTransmit(char dataToSerialPortBuffer[])
+void toTransmit(char * dataToSerialPortBuffer)
 {
-	std::cout << "Enter the data to send: " << std::endl;
-	std::cin >> dataToSerialPortBuffer;
+	std::string dataToSend;
+	std::cout << "Please insert the data to send: " << std::endl;
+	std::cin >> dataToSend;
+
+	dataToSerialPortBuffer = new char[dataToSend.length() + 1];
+	std::strcpy(dataToSerialPortBuffer, dataToSend.c_str());	// Data to write to the serial port
+
 }
 

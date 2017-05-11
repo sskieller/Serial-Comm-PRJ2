@@ -6,4 +6,4 @@
 void Transmitting(BOOL Status, HANDLE handleSerialCommPort, char dataToSerialPortBuffer[], std::wstring comID);
 
 
-char toTransmit(char dataToSerialPortBuffer[]);
+void toTransmit(char * dataToSerialPortBuffer);
